@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export', // <-- This replaces "next export"
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -9,7 +10,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export', // ✅ Static export mode
 };
 
 export default nextConfig;
