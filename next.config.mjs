@@ -9,7 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export', // 👈 This is the key change
+  output: 'export', // ✅ Static export mode
 };
 
 export default nextConfig;
