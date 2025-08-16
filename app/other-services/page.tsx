@@ -1,5 +1,6 @@
 import { Header } from "../../components/header"
 import { Footer } from "../../components/footer"
+import Link from "next/link"
 
 export default function OtherServicesPage() {
   return (
@@ -73,12 +74,12 @@ export default function OtherServicesPage() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold mb-4">Need Assistance with Other Legal Matters?</h2>
             <p className="text-xl mb-8">Our team is ready to provide expert guidance and representation.</p>
-            <a
+            <Link
               href="/contact"
               className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-block"
             >
               Contact Us Today
-            </a>
+            </Link>
           </div>
         </section>
       </main>
