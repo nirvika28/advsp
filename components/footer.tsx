@@ -51,11 +51,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/expertise" className="text-gray-300 hover:text-amber-600">
-                  Expertise
-                </Link>
-              </li>
-              <li>
                 <Link href="/other-services" className="text-gray-300 hover:text-amber-600">
                   Other Services
                 </Link>
@@ -109,14 +104,18 @@ export function Footer() {
                 <span className="text-gray-300 text-sm">
                   Advocate SP AGGARWAL <br />
                   2395A Narela Mandi extension <br />
-                  gali doctor Ashok tuteja <br />
-                  near Padam dham ujala boutique <br />
+                  Gali doctor Ashok tuteja <br />
+                  Near Ujala boutique Padam Dham <br />
                   Delhi 110040
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-amber-600" />
-                <span className="text-gray-300 text-sm">+91-8920245815</span>
+                <span className="text-gray-300 text-sm">+91-7011503198</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone size={16} className="text-amber-600" />
+                <span className="text-gray-300 text-sm">+91-8826370448</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-amber-600" />
@@ -124,8 +123,8 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Whatsapp size={16} className="text-amber-600" />
-                <a href="https://wa.me/918920245815" className="text-gray-300 text-sm hover:text-amber-600">
-                  WhatsApp: +91-8920245815
+                <a href="https://wa.me/917011503198" className="text-gray-300 text-sm hover:text-amber-600">
+                  WhatsApp: +91-7011503198
                 </a>
               </div>
             </div>
