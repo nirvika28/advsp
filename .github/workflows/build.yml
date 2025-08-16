@@ -1,20 +1,18 @@
-name: Build and Deploy Next.js Static Site
+name: Build Only
 
 on:
-  workflow_dispatch: # allow manual trigger
   push:
     branches:
-      - main # runs on every push to main branch
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -22,37 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Clean any old build files
-      - name: Clean previous build
-        run: rm -rf .next out
-
-      # Build will automatically create "out/" because of `output: export`
       - name: Build static export
-        run: npm run build
-
-      - name: Upload production-ready files
-        uses: actions/upload-artifact@v4
-        with:
-          name: nextjs-static-site
-          path: out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: nextjs-static-site
-          path: ./out
-
-      # 👉 Replace with your actual hosting provider’s deploy step
-      # For Hostinger, you usually deploy via FTP
-      - name: Deploy via FTP
-        uses: samkirkland/ftp-deploy-action@v4.3.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out
-          server-dir: /public_html
+        run: |
+          npm run build
+          npm run export
