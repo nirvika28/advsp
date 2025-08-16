@@ -1,7 +1,10 @@
-name: Build Next.js Static Site
+name: Build and Deploy Next.js Static Site
 
 on:
-  workflow_dispatch: # allows manual trigger
+  workflow_dispatch: # allow manual trigger
+  push:
+    branches:
+      - main # runs on every push to main branch
 
 jobs:
   build:
@@ -11,28 +14,45 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # Install dependencies (no lockfile issue)
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Ensure no old "out" folder lingers
-      - name: Clean old out folder
-        run: rm -rf out
+      # Clean any old build files
+      - name: Clean previous build
+        run: rm -rf .next out
 
-      # Build & export static site
+      # Build will automatically create "out/" because of `output: export`
       - name: Build static export
-        run: |
-          npm run build
-          npm run export
+        run: npm run build
 
-      # Upload the new out folder
-      - name: Upload out folder
+      - name: Upload production-ready files
         uses: actions/upload-artifact@v4
         with:
-          name: nextjs-out
+          name: nextjs-static-site
           path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: nextjs-static-site
+          path: ./out
+
+      # 👉 Replace with your actual hosting provider’s deploy step
+      # For Hostinger, you usually deploy via FTP
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out
+          server-dir: /public_html
