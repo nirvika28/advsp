@@ -85,7 +85,7 @@ export default function ContactPage() {
                     id="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="7011503198, 8826370448"
+                    placeholder="12345678"
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500"
                   />
                 </div>
@@ -127,7 +127,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-700">+91-8920245815</p>
+                  <p className="text-gray-700">+91-7011503198</p>
+                  <p className="text-gray-700">+91-8826370448</p>
+
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Email</h3>
@@ -143,7 +145,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.7000000000005!2d77.10000000000001!3d28.700000000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0123456789ab%3A0x123456789abcdef!2sSp%20Agarwal%20and%20advocate%2C%202395A%20Narela%20Mandi%20extension%2C%20gali%20doctor%20Ashok%20tuteja%2C%20near%20Padam%20dham%20ujala%20boutique%2C%20Delhi%20110040!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3497.7!2d77.0875369!3d28.8442183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDUwJzM5LjIiTiA3N8KwMDUnMTUuMSJF!5e0!3m2!1sen!2sin!4v1692345678901!5m2!1sen!2sin"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
