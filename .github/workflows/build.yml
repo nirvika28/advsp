@@ -16,17 +16,21 @@ jobs:
         with:
           node-version: 18
 
+      # Install dependencies (no lockfile issue)
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
+      # Ensure no old "out" folder lingers
       - name: Clean old out folder
         run: rm -rf out
 
+      # Build & export static site
       - name: Build static export
         run: |
           npm run build
           npm run export
 
+      # Upload the new out folder
       - name: Upload out folder
         uses: actions/upload-artifact@v4
         with:
