@@ -85,7 +85,7 @@ export default function ContactPage() {
                     id="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91-9876543210"
+                    placeholder="7011503198, 8826370448"
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500"
                   />
                 </div>
@@ -120,8 +120,8 @@ export default function ContactPage() {
                   <p className="text-gray-700">
                     Advocate SP AGGARWAL <br />
                     2395A Narela Mandi extension <br />
-                    gali doctor Ashok tuteja <br />
-                    near Padam dham ujala boutique <br />
+                    Gali doctor Ashok tuteja <br />
+                    Near Ujala boutique Padam Dham <br />
                     Delhi 110040
                   </p>
                 </div>
